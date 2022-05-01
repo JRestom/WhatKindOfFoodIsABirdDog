@@ -1,0 +1,51 @@
+python main.py  --epochs 10 \
+                --model convnext_base \
+                --data_set image_folder \
+                --data_path ../BIRDDOG/train \
+                --eval_data_path ../BIRDDOG/val \
+                --nb_classes 320 \
+                --num_workers 8 \
+                --warmup_epochs 0 \
+                --save_ckpt false \
+                --output_dir model_ckpt \
+                --finetune convnext_base_1k_224.pth \
+                --cutmix 0 \
+                --mixup 0 --lr 4e-4 \
+                --enable_wandb true \
+                --wandb_ckpt true \
+                --food false
+
+python main.py  --epochs 10 \
+                --model convnext_base \
+                --data_set image_folder \
+                --data_path ../CUB/train \
+                --eval_data_path ../CUB/val \
+                --nb_classes 200 \
+                --num_workers 8 \
+                --warmup_epochs 0 \
+                --save_ckpt false \
+                --output_dir model_ckpt \
+                --finetune convnext_base_1k_224.pth \
+                --cutmix 0 \
+                --mixup 0 --lr 4e-4 \
+                --enable_wandb true \
+                --wandb_ckpt true \
+                --food false
+
+#!/bin/bash
+python main.py  --epochs 10 \
+                --model convnext_base \
+                --data_set image_folder \
+                --data_path ../FoodX/food_dataset/train_set \
+                --eval_data_path ../FoodX/food_dataset/val_set \
+                --nb_classes 251 \
+                --num_workers 8 \
+                --warmup_epochs 0 \
+                --save_ckpt false \
+                --output_dir model_ckpt \
+                --finetune convnext_base_1k_224.pth \
+                --cutmix 0 \
+                --mixup 0 --lr 4e-4 \
+                --enable_wandb true \
+                --wandb_ckpt true \
+                --food true
